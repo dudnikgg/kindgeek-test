@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>kindgeek test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="main.css">
+</head>
+<body ng-app="kindgeek" ng-cloak>
+  <app>
+    <div class="form-wrapper" ng-controller="formCtrl">
+      <div class="step step-one">
+        <form class="step__forms form" name="stepOneForm" ng-cahnge="checkFields()" novalidate>
+          <h2 class="form--title">Post a job</h2>
+          <span class="form--number">Step 1</span>
+          <md-input-container class="form--input" md-no-float>
+            <label>Mark</label>
+            <md-select ng-model="formModel.mark" required ng-change="onSelect()">
+              <md-option ng-repeat="option in options" ng-value="option.value">
+                {{option.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="form--input" md-no-float>
+            <label>Model</label>
+            <md-select ng-model="formModel.model" required ng-change="onSelect()">
+              <md-option ng-repeat="option in options" ng-value="option.value">
+                {{option.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="form--input" md-no-float>
+            <label>Year</label>
+            <md-select ng-model="formModel.year" required ng-change="onSelect()">
+              <md-option ng-repeat="option in options" ng-value="option.value">
+                {{option.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="form--input" md-no-float>
+            <input ng-model="formModel.repair" placeholder="What exactly need to be repaired?">
+          </md-input-container>
+        </form>
+        <div class="form--description">
+          <h5>Description</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, sunt impedit hic, aspernatur quidem vitae, blanditiis accusamus beatae dicta at reiciendis.</p>
+        </div>
+      </div>
+      <div class="step step-two" ng-show="step == 2">
+        <form class="step__forms form" name="stepTwoForm" novalidate>
+          <h2 class="form--title">Post a job</h2>
+          <span class="form--number">Step 2</span>
+          <md-input-container class="form--input" md-no-float>
+            <label>Category of Work</label>
+            <md-select ng-model="formModel.category" required>
+              <md-option ng-repeat="option in options" ng-value="option.value">
+                {{option.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="form--input" md-no-float>
+            <label>Subcategory</label>
+            <md-select ng-model="formModel.subcategory" required>
+              <md-option ng-repeat="option in options" ng-value="option.value">
+                {{option.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="form--input" md-no-float>
+            <label>Select Emirate</label>
+            <md-select ng-model="formModel.emirate" required>
+              <md-option ng-repeat="option in options" ng-value="option.value">
+                {{option.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container class="form--input" md-no-float>
+            <label>Select Area</label>
+            <md-select ng-model="formModel.area" required>
+              <md-option ng-repeat="option in options" ng-value="option.value">
+                {{option.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-checkbox class="md-primary form--checkbox" ng-model="formModel.cb1" aria-label="Checkbox 1">
+            Need tow Truck
+          </md-checkbox>
+          <md-checkbox class="md-primary form--checkbox" ng-model="formModel.cb2" aria-label="Checkbox 2">
+            Need car Pickup
+          </md-checkbox>
+          <md-checkbox class="md-primary form--checkbox" ng-model="formModel.cb3" aria-label="Checkbox 3">
+            Custom Parts
+          </md-checkbox>
+          <md-input-container class="form--datepicker md-block">
+            <!-- <h5>Desired date of repair</h5> -->
+            <md-datepicker ng-model="formModel.myDate" md-placeholder="Enter date"></md-datepicker>
+          </md-input-container>
+        </form>
+        <div class="form--description">
+          <h5>Description</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, sunt impedit hic, aspernatur quidem vitae, blanditiis accusamus beatae dicta at reiciendis.</p>
+        </div>
+      </div>
+      <div class="form-buttons" ng-class="{'vis-hidden': step!==2}">
+        <md-button class="clearAll" ng-click="clearAll()">Clear all</md-button>
+        <md-button class="submit" type="submit" ng-click="submitForm()">Submit</md-button>
+      </div>
+    </div>
+  </app>
+
+
+
+  <!-- Vendors -->
+  <script src="../assets/vendors/angular/angular.min.js"></script>
+  <script src="../assets/vendors/angular-animate/angular-animate.min.js"></script>
+  <script src="../assets/vendors/angular-aria/angular-aria.min.js"></script>
+  <script src="../assets/vendors/angular-messages/angular-messages.min.js"></script>
+  <script src="../assets/vendors/angular-material/angular-material.min.js"></script>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "kindgeek-test",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "dudnik.gg@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "scss",
+    "form"
+  ],
+  "homepage": "https://github.com/dudnikgg/kindgeek-test",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-material": "^1.1.1"
+  }
+}

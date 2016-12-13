@@ -1,0 +1,91 @@
+@import 'angular-material.scss';
+$form-paddings: 15px 10px 0;
+
+.vis-hidden{
+  visibility: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+app {
+  display: flex;
+  flex: 0 0 50%;
+  flex-wrap: wrap;
+}
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 2px;
+}
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex: 1 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid #000;
+}
+
+
+.step {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 48%;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  &--number {
+    font-size: 14px;
+    color: #ccc;
+  }
+  &__forms {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.form {
+  align-content: flex-start;
+  padding: $form-paddings;
+  &--title {
+    flex: 1 0 100%;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  &--number {
+    padding-bottom: 20px;
+  }
+  &--input {
+    flex: 1 0 100%;
+    margin: 10px 0;
+  }
+  &--checkbox {
+    flex: 1 0 100%;
+  }
+  &--description {
+    align-self: flex-end;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: $form-paddings;
+    padding-bottom: 15px;
+    & p {
+      padding-top: 15px;
+    }
+  }
+}
+
+
+// Checkbox fix for AM
+md-checkbox.md-default-theme:not([disabled]).md-primary.md-checked .md-icon:after, md-checkbox:not([disabled]).md-primary.md-checked .md-icon:after {
+  border-color: #fff;
+}
